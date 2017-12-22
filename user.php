@@ -9,6 +9,55 @@ if(isset($_GET['page']) && $_GET['page']=='login'){
 	login($login_error);
 }
 
+function login_view(){	
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Character Set type -->
+	<meta charset="utf-8"> 
+
+    <!-- Support for mobile devices -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Title of the Page -->
+	<title>K9Anat-Home</title>
+
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body>
+<div class="container">
+	 <div class="jumbotron "> <h2 id="logo_text">Iowa State University<br> Department of Biomedical Science</h3></div
+</div>
+
+<div id="con2" class="container mx-auto">
+
+	<h2 id="welcome_a">K9Anat</h2>
+  <!-- Button to Open the Modal -->
+  <button id = "welcome_b" type="button" class="mx-auto btn btn-danger" onclick="window.location.href='?page=login'">
+    Login
+  </button>
+</div>
+
+</body>
+</html>
+
+<?php
+}
+
 function info(){
 
 	include('config.php');
@@ -19,16 +68,18 @@ function info(){
 	//echo "</pre>";
 
 	if(!loggedin()){
-		echo "User: NONE <br/>\n";
-		echo "<a href=\"?page=login\">Login</a>";
+		//echo "User: NONE <br/>\n";
+		//echo "<a href=\"?page=login\">Login</a>";
+		login_view();
 	}else{
 
 		echo "User: " . $_SESSION[$site]['user'] . "<br/>\n";
 		echo "<a href=\"?page=logout\">Logout</a>";
+		
 	}
 
-	echo "<br/>";
-	echo "<br/>";
+	//echo "<br/>";
+	//echo "<br/>";
 } 
 
 function loggedin(){
@@ -192,21 +243,50 @@ function logout(){
 
 }
 
-function login($login_error){
+function login($login_error){	
 ?>
-    <form action="?page=login" method="post">
-	Enter your Net-ID and password<br />
-	<?php if(isset($login_error) && $login_error==true){echo "<br><b style=\"color: #FF0000;\">Invalid username or password</b><br/>\n";} ?>
-      <p>Net-ID<br />
-      <input name="username" />
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Character Set type -->
+	<meta charset="utf-8"> 
 
-	<p>Password<br />
-	<input name="pass" type="password" /></p>
-      <p>
-      <input type="submit" value="Login" /></p>
-    </form>
+    <!-- Support for mobile devices -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-<?php
+	<!-- Title of the Page -->
+	<title>K9Anat-Home</title>
+
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body>
+
+	<div class="wrapper">
+		<form name="Login_Form" class="form-signin" action="?page=login" method="post">   
+			<?php if(isset($login_error) && $login_error==true){echo "<br><b style=\"color: #FF0000;\">Invalid username or password</b><br/>\n";} ?>
+			  <input type="text" class="form-control" name="username" placeholder="Net-ID" required="" autofocus="" />
+			  <input type="password" class="form-control" name="pass" placeholder="Password" required=""/>     		  
+			  <button id="submit" class="btn btn-lg btn-danger btn-block"  name="Submit" value="Login" type="submit">Login</button> 
+		</form>			
+	</div>
+	
+	</body>
+	
+	</html>
+<?php 
 }
 
 ?>

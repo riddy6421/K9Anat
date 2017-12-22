@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Character Set type -->
+	<meta charset="utf-8"> 
+
+    <!-- Support for mobile devices -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Title of the Page -->
+	<title>K9Anat-Home</title>
+
+	<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body>
+
+<div class="container">
+	 <div class="jumbotron "> <h2 id="logo_text">Iowa State University<br> Department of Biomedical Science</h3></div
+</div>
+
+<div id="con2" class="container mx-auto">
+
+	<h2 id="welcome_a">K9Anat</h2>
+  <!-- Button to Open the Modal -->
+  <button id = "welcome_b" type="button" class="mx-auto btn btn-danger" data-toggle="modal" data-target="#myModal">
+    Login
+  </button>
+
+  <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Login</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+          <div class = "container">
+	<div class="wrapper">
+		<form name="Login_Form" class="form-signin">       
+			  <input type="text" class="form-control" name="Username" placeholder="Username" required="" autofocus="" />
+			  <input type="password" class="form-control" name="Password" placeholder="Password" required=""/>     		  
+			  <button id="submit" class="btn btn-lg btn-danger btn-block"  name="Submit" value="Login" type="Submit">Login</button> 
+		</form>			
+	</div>
+</div>
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
