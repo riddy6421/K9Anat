@@ -22,6 +22,9 @@ function login_view(){
 
 	<!-- Title of the Page -->
 	<title>K9Anat-Home</title>
+	
+	<!-- Google Raleway-Font -->
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
 
 	<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
@@ -256,6 +259,9 @@ function login($login_error){
 
 	<!-- Title of the Page -->
 	<title>K9Anat-Home</title>
+	
+	<!-- Google Raleway-Font -->
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
 
 	<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
